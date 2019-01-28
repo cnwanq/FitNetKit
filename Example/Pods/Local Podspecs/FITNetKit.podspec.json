@@ -1,0 +1,22 @@
+{
+  "name": "FITNetKit",
+  "version": "0.1.0",
+  "summary": "A short description of FITNetKit.",
+  "description": "TODO: Add long description of the pod here.",
+  "homepage": "https://github.com/wanqijian/FITNetKit",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "wanqijian": "wanqijian@icloud.com"
+  },
+  "source": {
+    "git": "https://github.com/wanqijian/FITNetKit.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "8.0"
+  },
+  "source_files": "FITNetKit/Classes/**/*"
+}

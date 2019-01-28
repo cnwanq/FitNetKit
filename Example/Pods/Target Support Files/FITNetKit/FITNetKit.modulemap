@@ -1,0 +1,6 @@
+framework module FITNetKit {
+  umbrella header "FITNetKit-umbrella.h"
+
+  export *
+  module * { export * }
+}
