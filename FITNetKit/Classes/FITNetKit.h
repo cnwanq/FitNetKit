@@ -17,10 +17,10 @@
  简单的接入，方便调用，快速开发
  
  需要实现的功能：
- * 支持RESTFul请求
+ * 支持RESTFul请求 ✔️
  * 支持上传下载
- * 方便维护请求参数
- * 支持多 BaseUrl
+ * 方便维护请求参数 ✔️
+ * 支持多 BaseUrl ✔️
  * 支持多请求依赖，合并，并发处理
  * 切面式设置plugin
  */
@@ -32,6 +32,9 @@ NS_ASSUME_NONNULL_BEGIN
 @interface FITNetKit : NSObject
 
 @property (nonatomic, strong, readonly) NSDictionary<NSString *, FITNetClient *> *netTargets;
+
++ (instancetype)new NS_UNAVAILABLE;
+- (instancetype)init NS_UNAVAILABLE;
 
 + (instancetype)shareKit;
 

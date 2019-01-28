@@ -7,6 +7,7 @@
 //
 
 #import "FITViewController.h"
+#import "FITNetKit.h"
 
 @interface FITViewController ()
 
@@ -20,10 +21,33 @@
 	// Do any additional setup after loading the view, typically from a nib.
 }
 
-- (void)didReceiveMemoryWarning
+- (void)viewWillAppear:(BOOL)animated
 {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    [super viewWillAppear:animated];
+    
+    [self loadRequest];
+}
+
+
+- (void)loadRequest
+{
+    FITNetTarget *target = [FITNetTarget alloc] ;
+    target.baseUrl = @"http://t11.klook.io";
+    
+    FITNetClient *client = [[FITNetClient alloc] initWithTarget:target];
+    
+    FITNetRequest *request = [[FITNetRequest alloc] init];
+    request.requestSerializer = RequestSerializerHTTP;
+    request.responseSerializer = ResponseSerializerHTTP;
+    request.url = @"/";
+    
+    [client startRequest:request success:^(id responseObject) {
+        NSLog(@"%@", responseObject);
+    } failure:^(NSError * error) {
+        NSLog(@"%@", error);
+    }];
+    
+    
 }
 
 @end

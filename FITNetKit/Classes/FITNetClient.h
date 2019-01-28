@@ -17,10 +17,13 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, strong, readonly) FITNetTarget *target;
 
++ (instancetype)new NS_UNAVAILABLE;
+- (instancetype)init NS_UNAVAILABLE;
+
 - (instancetype)initWithTarget:(FITNetTarget *)target;
 
-
 - (void)startRequest:(FITNetRequest *)request success:(void (^)(id responseObject))successBlock failure:(void (^)(NSError *error))failureBlock;
+
 
 @end
 

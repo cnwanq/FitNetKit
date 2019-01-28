@@ -14,6 +14,14 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, strong) NSString *baseUrl;
 
+@property (nonatomic, strong) NSMutableDictionary *requestHeaderValues;
+@property (nonatomic, strong) void(^successBlock)(id);
+@property (nonatomic, strong) void(^failBlock)(NSError *);
+
++ (instancetype)new NS_UNAVAILABLE;
+- (instancetype)init NS_UNAVAILABLE;
+
+- (instancetype)initWithBaseUrl:(NSString *)baseUrl;
 
 @end
 

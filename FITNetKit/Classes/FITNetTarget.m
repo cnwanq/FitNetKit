@@ -10,4 +10,10 @@
 
 @implementation FITNetTarget
 
+- (instancetype)initWithBaseUrl:(NSString *)baseUrl {
+    self = [super init];
+    _baseUrl = baseUrl;
+    return self;
+}
+
 @end

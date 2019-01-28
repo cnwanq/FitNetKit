@@ -18,5 +18,10 @@
   "platforms": {
     "ios": "8.0"
   },
-  "source_files": "FITNetKit/Classes/**/*"
+  "source_files": "FITNetKit/Classes/**/*",
+  "dependencies": {
+    "AFNetworking": [
+      "~> 3.2.1"
+    ]
+  }
 }

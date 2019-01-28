@@ -23,7 +23,7 @@ static NSArray *_targets = nil;
 + (instancetype)shareKit {
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        _shareKit = [[FITNetKit alloc] init];
+        _shareKit = [[self alloc] init];
     });
     return _shareKit;
 }
