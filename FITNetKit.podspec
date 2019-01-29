@@ -18,10 +18,10 @@ Pod::Spec.new do |s|
 #   * Finally, don't worry about the indent, CocoaPods strips it!
 
   s.description      = <<-DESC
-TODO: Add long description of the pod here.
+Install your own ideas to encapsulate a set of network request tools, easy to call, rapid development.
                        DESC
 
-  s.homepage         = 'https://github.com/wanqijian/FITNetKit'
+  s.homepage         = 'https://github.com/cnwanq/FITNetKit'
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'wanqijian' => 'wanqijian@icloud.com' }
