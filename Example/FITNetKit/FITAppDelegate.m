@@ -7,12 +7,22 @@
 //
 
 #import "FITAppDelegate.h"
+#import "FITNetKit.h"
 
 @implementation FITAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
+    
+    
+    [FITNetKit shareKit].reachabilityChange = ^(NSInteger status) {
+        NSLog(@"reachabilityChange");
+    };
+    FITNetTarget *klookNetTarget = [[FITNetTarget alloc] initWithBaseUrl:@"https://www.klook.com"];
+    [[FITNetKit shareKit] installTargets:@[klookNetTarget]];
+    
+    
     return YES;
 }
 

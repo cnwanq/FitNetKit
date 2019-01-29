@@ -31,10 +31,9 @@
 
 - (void)loadRequest
 {
-    FITNetTarget *target = [FITNetTarget alloc] ;
-    target.baseUrl = @"http://t11.klook.io";
     
-    FITNetClient *client = [[FITNetClient alloc] initWithTarget:target];
+//    FITNetClient *client = [[FITNetClient alloc] initWithTarget:target];
+    FITNetClient *client = [[FITNetKit shareKit] defaultClient];
     
     FITNetRequest *request = [[FITNetRequest alloc] init];
     request.requestSerializer = RequestSerializerHTTP;

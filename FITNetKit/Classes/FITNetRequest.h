@@ -47,7 +47,7 @@ typedef NS_ENUM(NSInteger, FITNetResponseSerializer) {
 @property (nonatomic, strong) id response;
 
 
-- (void)requestWithSuccess:(void(^)(id responseData))success Failure:(void(^)(id error))failure;
+- (void)requestWithSuccess:(void(^)(id responseData))successBlock Failure:(void(^)(id error))failureBlock;
 
 
 @end

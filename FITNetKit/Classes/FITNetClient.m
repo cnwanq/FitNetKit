@@ -18,6 +18,9 @@
 @implementation FITNetClient
 
 - (instancetype)initWithTarget:(FITNetTarget *)target {
+    if (!target || target.baseUrl.length == 0) {
+        return nil;
+    }
     self = [super initWithBaseURL:[NSURL URLWithString:target.baseUrl]];
     
     // support response content type `text/html`
@@ -149,6 +152,7 @@
 }
 
 - (void)handleRequest:(FITNetRequest *)request response:(id)response successBlock:(void (^)(id responseObject))successBlock {
+    request.response = response;
     if (self.target && self.target.successBlock) {
         self.target.successBlock(response);
     }
@@ -159,8 +163,8 @@
 }
 
 - (void)handleRequest:(FITNetRequest *)request error:(NSError *)error failureBlock:(void (^)(NSError *error))failureBlock {
-    if (self.target && self.target.failBlock) {
-        self.target.failBlock(error);
+    if (self.target && self.target.failureBlock) {
+        self.target.failureBlock(error);
     }
     if (failureBlock) {
         failureBlock(error);

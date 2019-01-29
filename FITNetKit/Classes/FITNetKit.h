@@ -22,7 +22,7 @@
  * 方便维护请求参数 ✔️
  * 支持多 BaseUrl ✔️
  * 支持多请求依赖，合并，并发处理
- * 切面式设置plugin
+ * 切面式设置plugin ✔️
  */
 
 NS_ASSUME_NONNULL_BEGIN
@@ -31,17 +31,21 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface FITNetKit : NSObject
 
-@property (nonatomic, strong, readonly) NSDictionary<NSString *, FITNetClient *> *netTargets;
-
-+ (instancetype)new NS_UNAVAILABLE;
-- (instancetype)init NS_UNAVAILABLE;
+@property (nonatomic, strong, readonly) NSDictionary<NSString *, FITNetClient *> *targetClients;
+@property (nonatomic, strong) void(^reachabilityChange)(AFNetworkReachabilityStatus status);
 
 + (instancetype)shareKit;
 
-+ (void)installTargets:(NSArray<FITNetTarget *> *)targets;
+- (void)installTargets:(NSArray<FITNetTarget *> *)targets;
 
 + (FITNetClient *)netClientWithURL:(NSString *)url;
 + (FITNetClient *)netClientWithTarget:(FITNetTarget *)target;
+
+
++ (void)request:(FITNetRequest *)request;
+
+- (FITNetClient *)defaultClient;
+
 
 @end
 
